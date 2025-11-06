@@ -1,4 +1,4 @@
-ingredient_name,mind_diet,mediterranean_diet,dash_diet,table_nutrition
+ingredient_name,mind_diet,mediterranean_diet,dash_diet,anti-inflammatory
 Adzuki Beans,yes,yes,yes,yes
 Almonds,yes,yes,yes,yes
 Amaranth,yes,yes,yes,yes
@@ -178,4 +178,5 @@ Whole Wheat,yes,yes,yes,yes
 Whole Wheat Pasta,yes,yes,yes,yes
 Yellow Catfish,yes,yes,yes,yes
 Yogurt (Fermented),no,yes,no,yes
+
 Zucchini,yes,yes,yes,yes
