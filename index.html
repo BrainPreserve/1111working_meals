@@ -15,454 +15,29 @@
     .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 4px 14px rgba(0,0,0,.04);margin:18px 0}
     textarea{width:100%;padding:12px;border:1px solid #d0d5dd;border-radius:12px}
     .row{display:flex;align-items:center;gap:10px;margin:10px 0}
-    input[type="number"],
-    input[type="email"]{width:220px;padding:10px;border:1px solid #d0d5dd;border-radius:12px}
+    input[type="number"]{width:120px;padding:10px;border:1px solid #d0d5dd;border-radius:12px}
     button{padding:10px 14px;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:12px;cursor:pointer}
     button.ghost{border-color:#d0d5dd;background:#fff;color:#111}
     button:disabled{opacity:.6;cursor:not-allowed}
     .btn-row{display:flex;gap:10px;flex-wrap:wrap}
-    pre{white-space:pre-wrap;background:#ffffff;color:#111111;padding:12px;border-radius:12px;min-height:48px;margin-top:12px;border:1px solid #e5e7eb}
+    pre{white-space:pre-wrap;background:#ffffff;color:#111111;padding:14px;border-radius:12px;min-height:48px;margin-top:12px;border:1px solid #e5e7eb}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     @media (max-width:860px){.grid{grid-template-columns:1fr}}
-    .accordion{border:1px dashed #d0d5dd;border-radius:12px;margin-top:12px}
-    .acc-header{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;cursor:pointer}
-    .acc-header h4{margin:0}
-    .acc-header span{font-size:13px;color:var(--muted)}
-    .acc-content{border-top:1px dashed #d0d5dd;padding:10px 12px;display:none}
-    .accordion.open .acc-content{display:block}
-    .muted{color:#667085;font-size:13px}
+    .accordion{border:1px dashed #d6d6d6;border-radius:12px;margin:10px 0;overflow:hidden;background:#fff}
+    .acc-header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#f9fafb;cursor:pointer}
+    .acc-header h4{margin:0;font-size:15px}
+    .acc-content{display:none;padding:12px 14px;background:#fff}
+    .acc-content.open{display:block}
     .checks{display:flex;flex-wrap:wrap;gap:8px}
-    .check-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid #d0d5dd;font-size:13px;background:#fff}
-    .check-pill input{margin:0}
-    .status{margin-top:8px;font-size:13px;color:var(--muted)}
-    #bp-nutrition{margin:24px 0}
-    .table-wrapper{margin:16px 0;border-radius:12px;border:1px solid #e5e7eb;overflow:hidden;background:#fff}
-    .table-wrapper h3{margin:0;padding:10px 12px;border-bottom:1px solid #e5e7eb;background:#f9fafb}
-    table{width:100%;border-collapse:collapse;font-size:13px}
-    th,td{padding:8px 10px;border-bottom:1px solid #f1f5f9;text-align:left}
-    th{background:#f9fafb;font-weight:600}
-    tr:nth-child(even){background:#f9fafb}
-    .badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:999px;font-size:11px;border:1px solid #e5e7eb;background:#f9fafb}
-    .badge.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .badge.caution{border-color:#ea580c;color:#9a3412;background:#ffedd5}
-    .badge.limit{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill{display:inline-flex;padding:2px 8px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;font-size:11px;margin:0 4px 4px 0}
-    .pill.green{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill.red{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill.neutral{border-color:#6b7280;color:#374151;background:#f9fafb}
-    .note{font-size:11px;color:#6b7280;margin-top:4px}
-    .section-label{font-size:12px;font-weight:600;color:#475467;text-transform:uppercase;letter-spacing:.03em;margin:0 0 4px}
-    .card-title-row{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .card-title-row small{font-size:12px;color:#6b7280}
-    .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-    .tag{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#374151}
-    .tag.anti{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .tag.pro{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .tag.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .tag.neuro{border-color:#4f46e5;color:#3730a3;background:#e0e7ff}
-    .tag.metabolic{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .tag.microbiome{border-color:#a855f7;color:#6b21a8;background:#f3e8ff}
-    .tag.cardiometabolic{border-color:#22c55e;color:#15803d;background:#dcfce7}
-    .tag.cognitive{border-color:#f97316;color:#9a3412;background:#ffedd5}
-    .tag.generic{border-color:#6b7280;color:#374151;background:#f9fafb}
-    .footnote{font-size:11px;color:#6b7280;margin-top:8px}
-    .bp-note{font-size:11px;color:#6b7280;margin-top:6px}
-    .bp-section-title{font-size:14px;font-weight:600;margin:12px 0 4px}
-    .pill-row{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0}
-    .pill-row .pill{margin:0}
-    .subtle-card{border-radius:12px;border:1px dashed #e5e7eb;padding:12px;background:#f9fafb;margin-top:10px}
-    .subtle-card h4{margin:0 0 4px;font-size:13px}
-    .subtle-card p{margin:0;font-size:12px;color:#4b5563}
-    .mini-label{font-size:11px;color:#6b7280;margin-bottom:2px}
-    .legend-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-    .legend-row .badge{margin-right:4px}
-    .small{font-size:12px;color:#6b7280}
-    .section-spacer{margin-top:18px;border-top:1px dashed #e5e7eb;padding-top:12px}
-    .helper-text{font-size:12px;color:#6b7280;margin-top:4px}
-    .field-group{margin:8px 0}
-    .field-group label{display:block;font-size:13px;color:#374151;margin-bottom:4px}
-    .field-group input{width:100%;max-width:260px;padding:8px 10px;border-radius:12px;border:1px solid #d0d5dd}
-    .section-caption{font-size:12px;color:#6b7280;margin-top:4px}
-    .inline-pill{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid #e5e7eb;font-size:11px;background:#f9fafb;color:#374151;margin-left:6px}
-    .info-block{font-size:12px;color:#4b5563;background:#f9fafb;border-radius:12px;padding:8px 10px;border:1px dashed #e5e7eb;margin-top:8px}
-    .info-block strong{color:#111827}
-    .stack{display:flex;flex-direction:column;gap:4px}
-    .highlight-card{border-radius:14px;border:1px solid #e5e7eb;background:#f9fafb;padding:10px 12px;margin-top:10px}
-    .highlight-card p{margin:0;font-size:12px;color:#374151}
-    .highlight-card strong{color:#111827}
-    .pill.accent{border-color:#0a60ff;color:#0a60ff;background:#eff4ff}
-    .note-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-    .note-row span{font-size:11px;color:#6b7280}
-    .hrule{border-top:1px dashed #e5e7eb;margin:10px 0}
-    .tight{margin-top:4px}
-    .pill.emphasis{border-color:#4f46e5;color:#312e81;background:#e0e7ff}
-    .small-muted{font-size:11px;color:#9ca3af}
-    .full-width{width:100%}
-    .card-footer{margin-top:10px;font-size:11px;color:#6b7280}
-    .pill.subtle{border-color:#e5e7eb;color:#4b5563;background:#f9fafb}
-    .bp-caption{font-size:11px;color:#6b7280;margin-top:4px}
-    .pill-row-tight{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
-    .pill-row-tight .pill{margin:0;font-size:10px;padding:2px 6px}
-    .pill.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill.warning{border-color:#f97316;color:#9a3412;background:#ffedd5}
-    .pill.strong{border-color:#4b5563;color:#111827;background:#e5e7eb}
-    .pill-key{font-weight:600}
-    .stack-tight{display:flex;flex-direction:column;gap:2px}
-    .micro-note{font-size:11px;color:#6b7280;margin-top:2px}
-    .spacer-sm{margin-top:6px}
-    .card-compact{border-radius:12px;border:1px solid #e5e7eb;background:#f9fafb;padding:8px 10px;margin-top:8px}
-    .card-compact p{margin:0;font-size:12px;color:#374151}
-    .card-compact strong{color:#111827}
-    .inline-list{display:inline-flex;flex-wrap:wrap;gap:4px}
-    .inline-list span{font-size:11px;color:#4b5563}
-    .pill.neutral-alt{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .pill-row-center{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-    .pill-row-center .pill{margin:0}
-    .stacked-note{font-size:11px;color:#6b7280;margin-top:4px}
-    .muted-inline{font-size:11px;color:#9ca3af}
-    .small-strong{font-size:12px;font-weight:600;color:#111827}
-    .soft-card{border-radius:12px;border:1px solid #e5e7eb;background:#f9fafb;padding:10px 12px;margin-top:10px}
-    .soft-card p{margin:0;font-size:12px;color:#374151}
-    .soft-card strong{color:#111827}
-    .soft-card .pill{font-size:10px;padding:2px 6px}
-    .pill-keyword{font-weight:500}
-    .bp-subtitle{font-size:12px;color:#6b7280;margin-top:2px}
-    .pill-outline{border-color:#d1d5db;color:#374151;background:#fff}
-    .note-compact{font-size:11px;color:#6b7280;margin-top:2px}
-    .pill-compact{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-compact.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-compact.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-compact.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-    .section-header small{font-size:11px;color:#9ca3af}
-    .toggle-row{display:flex;align-items:center;gap:8px;margin-top:4px}
-    .toggle-row input{margin:0}
-    .toggle-row label{font-size:12px;color:#4b5563}
-    .hint{font-size:11px;color:#6b7280;margin-top:2px}
-    .divider{border-top:1px dashed #e5e7eb;margin:8px 0}
-    .chip-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
-    .chip{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .chip.emphasis{border-color:#4f46e5;color:#312e81;background:#e0e7ff}
-    .chip.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .chip.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .chip.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .chip.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .chip.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .keyline{border-top:1px dashed #e5e7eb;margin:10px 0}
-    .mini-help{font-size:11px;color:#9ca3af;margin-top:2px}
-    .micro-badge{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .micro-badge.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .micro-badge.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .micro-badge.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .micro-badge.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .micro-badge.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .bp-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-    .bp-header h3{margin:0;font-size:14px}
-    .bp-header span{font-size:11px;color:#9ca3af}
-    .pill-stack{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
-    .pill-stack .pill{margin:0}
-    .stack-note{font-size:11px;color:#6b7280;margin-top:4px}
-    .pill-soft{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-soft.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-soft.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-soft.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .pill-soft.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill-soft.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .pill-soft-key{font-weight:500}
-    .bp-grid{display:grid;grid-template-columns:1.2fr 1.3fr;gap:12px}
-    @media (max-width:860px){.bp-grid{grid-template-columns:1fr}}
-    .bp-col{padding:6px 0}
-    .bp-col h4{margin:0 0 4px;font-size:13px}
-    .bp-col p{margin:0;font-size:12px;color:#4b5563}
-    .bp-col .pill-row{margin-top:4px}
-    .bp-col .note{margin-top:2px}
-    .subhead{font-size:13px;color:#4b5563;margin:4px 0 0}
-    .mini-pill{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .mini-pill.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .mini-pill.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .mini-pill.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .mini-pill.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .mini-pill.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .mini-note{font-size:11px;color:#6b7280;margin-top:2px}
-    .card-tight{border-radius:10px;border:1px solid #e5e7eb;background:#f9fafb;padding:6px 8px;margin-top:6px}
-    .card-tight p{margin:0;font-size:11px;color:#374151}
-    .bp-legend{font-size:11px;color:#6b7280;margin-top:6px}
-    .bp-legend span{margin-right:8px}
-    .bp-legend .badge{margin-right:4px}
-    .badge.small{font-size:10px;padding:1px 6px}
-    .pill-extra{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-extra.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-extra.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-extra.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .pill-extra.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill-extra.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .small-caption{font-size:11px;color:#6b7280;margin-top:4px}
-    .note-inline{font-size:11px;color:#9ca3af}
-    .card-subtle{border-radius:12px;border:1px dashed #e5e7eb;background:#f9fafb;padding:8px 10px;margin-top:8px}
-    .card-subtle p{margin:0;font-size:12px;color:#374151}
-    .card-subtle strong{color:#111827}
-    .badge-dot{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#6b7280}
-    .badge-dot span{width:6px;height:6px;border-radius:999px;background:#6b7280;display:inline-block}
-    .badge-dot.good span{background:#16a34a}
-    .badge-dot.bad span{background:#b91c1c}
-    .badge-dot.mixed span{background:#0f766e}
-    .badge-dot.info span{background:#0ea5e9}
-    .badge-dot.neutral span{background:#9ca3af}
-    .bp-card{border-radius:14px;border:1px solid #e5e7eb;background:#ffffff;padding:12px 14px;margin:12px 0}
-    .bp-card h3{margin:0 0 4px;font-size:15px}
-    .bp-card p{margin:0;font-size:12px;color:#4b5563}
-    .bp-card .pill-row{margin-top:4px}
-    .bp-card .note{margin-top:4px}
-    .pill-thin{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-thin.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-thin.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-thin.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .pill-thin.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill-thin.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .pill-thin-key{font-weight:500}
-    .bp-hint{font-size:11px;color:#6b7280;margin-top:4px}
-    .bp-section{margin-top:14px}
-    .bp-section h4{margin:0 0 4px;font-size:13px}
-    .bp-section p{margin:0;font-size:12px;color:#4b5563}
-    .bp-section .pill-row{margin-top:4px}
-    .bp-section .note{margin-top:2px}
-    .bp-section .bp-caption{margin-top:2px}
-    .badge-mini{font-size:10px;padding:1px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .badge-mini.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .badge-mini.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .badge-mini.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .badge-mini.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .badge-mini.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .note-small{font-size:11px;color:#6b7280;margin-top:2px}
-    .tight-card{border-radius:10px;border:1px dashed #e5e7eb;background:#f9fafb;padding:6px 8px;margin-top:6px}
-    .tight-card p{margin:0;font-size:11px;color:#374151}
-    .tight-card strong{color:#111827}
-    .stack-xs{display:flex;flex-direction:column;gap:2px}
-    .tiny{font-size:10px;color:#9ca3af}
-    .pill-label{font-size:11px;color:#4b5563}
-    .legend-mini{font-size:10px;color:#9ca3af;margin-top:4px}
-    .subtle-divider{border-top:1px dashed #e5e7eb;margin:8px 0}
-    .tagline{font-size:12px;color:#4b5563;margin-top:2px}
-    .card-highlight{border-radius:14px;border:1px solid #e5e7eb;background:#f9fafb;padding:10px 12px;margin-top:10px}
-    .card-highlight p{margin:0;font-size:12px;color:#374151}
-    .card-highlight strong{color:#111827}
-    .badge-outline{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid #d1d5db;background:#fff;color:#4b5563}
-    .badge-outline.good{border-color:#16a34a;color:#166534}
-    .badge-outline.bad{border-color:#b91c1c;color:#7f1d1d}
-    .badge-outline.mixed{border-color:#0f766e;color:#115e59}
-    .badge-outline.info{border-color:#0ea5e9;color:#0369a1}
-    .badge-outline.neutral{border-color:#d1d5db;color:#374151}
-    .bp-note-compact{font-size:11px;color:#6b7280;margin-top:2px}
-    .pill-tiny{font-size:9px;padding:1px 5px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-tiny.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-tiny.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-tiny.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .pill-tiny.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill-tiny.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .note-micro{font-size:10px;color:#9ca3af;margin-top:2px}
-    .subtle-heading{font-size:12px;color:#4b5563;margin-top:6px}
-    .pill-outline-mini{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #d1d5db;background:#fff;color:#4b5563}
-    .hint-micro{font-size:10px;color:#9ca3af;margin-top:2px}
-    .stack-slim{display:flex;flex-direction:column;gap:1px}
-    .pill-neutral-soft{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .mini-divider{border-top:1px dashed #e5e7eb;margin:6px 0}
-    .badge-soft{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .badge-soft.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .badge-soft.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .badge-soft.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .badge-soft.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .badge-soft.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .badge-soft-key{font-weight:500}
-    .accent-note{font-size:11px;color:#0a60ff;margin-top:2px}
-    .small-inline{font-size:11px;color:#6b7280}
-    .pill-small{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-small.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-small.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-small.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .pill-small.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill-small.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .pill-small-key{font-weight:500}
-    .bp-mini-caption{font-size:10px;color:#9ca3af;margin-top:2px}
-    .note-fine{font-size:10px;color:#9ca3af;margin-top:2px}
-    .badge-faint{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .badge-faint.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .badge-faint.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .badge-faint.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .badge-faint.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .badge-faint.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .tiny-caption{font-size:10px;color:#9ca3af;margin-top:2px}
-    .micro-p{font-size:10px;color:#9ca3af;margin-top:2px}
-    .card-soft{border-radius:12px;border:1px solid #e5e7eb;background:#f9fafb;padding:8px 10px;margin-top:8px}
-    .card-soft p{margin:0;font-size:12px;color:#374151}
-    .card-soft strong{color:#111827}
-    .pill-balanced{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-balanced.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-balanced.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-balanced.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .pill-balanced.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill-balanced.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .pill-balanced-key{font-weight:500}
-    .note-balanced{font-size:11px;color:#6b7280;margin-top:2px}
-    .tag-balanced{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .tag-balanced.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .tag-balanced.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .tag-balanced.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .tag-balanced.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .tag-balanced.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .legend-balanced{font-size:11px;color:#6b7280;margin-top:4px}
-    .legend-balanced span{margin-right:8px}
-    .legend-balanced .badge{margin-right:4px}
-    .bp-footer-note{font-size:11px;color:#6b7280;margin-top:6px}
-    .pill-em{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #4f46e5;background:#e0e7ff;color:#312e81}
-    .pill-em-key{font-weight:600}
-    .bp-aux-note{font-size:11px;color:#6b7280;margin-top:4px}
-    .stack-spaced{display:flex;flex-direction:column;gap:4px}
-    .inline-help{font-size:11px;color:#6b7280;margin-left:6px}
-    .wrap-note{font-size:11px;color:#6b7280;margin-top:4px}
-    .bp-compact{border-radius:12px;border:1px solid #e5e7eb;background:#ffffff;padding:8px 10px;margin-top:8px}
-    .bp-compact p{margin:0;font-size:12px;color:#374151}
-    .bp-compact .pill-row{margin-top:4px}
-    .bp-compact .note{margin-top:2px}
-    .pill-trend{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-trend.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-trend.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-trend.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .pill-trend.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill-trend.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .trend-note{font-size:11px;color:#6b7280;margin-top:2px}
-    .bp-subtle{font-size:11px;color:#6b7280;margin-top:4px}
-    .pill-mini-alt{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #d1d5db;background:#fff;color:#4b5563}
-    .tag-soft{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .tag-soft.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .tag-soft.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .tag-soft.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .tag-soft.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .tag-soft.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .note-soft{font-size:11px;color:#6b7280;margin-top:4px}
-    .section-hint{font-size:11px;color:#6b7280;margin-top:2px}
-    .card-slim{border-radius:12px;border:1px solid #e5e7eb;background:#f9fafb;padding:8px 10px;margin-top:8px}
-    .card-slim p{margin:0;font-size:12px;color:#374151}
-    .card-slim strong{color:#111827}
-    .pill-slim{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-slim.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-slim.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-slim.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .pill-slim.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill-slim.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .pill-slim-key{font-weight:500}
-    .note-slim{font-size:11px;color:#6b7280;margin-top:2px}
-    .pill-label-mini{font-size:10px;color:#6b7280}
-    .badge-slim{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .badge-slim.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .badge-slim.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .badge-slim.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .badge-slim.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .badge-slim.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .hint-slim{font-size:11px;color:#6b7280;margin-top:2px}
-    .card-mini{border-radius:10px;border:1px solid #e5e7eb;background:#f9fafb;padding:6px 8px;margin-top:6px}
-    .card-mini p{margin:0;font-size:11px;color:#374151}
-    .card-mini strong{color:#111827}
-    .micro-hint{font-size:10px;color:#9ca3af;margin-top:2px}
-    .mini-stack{display:flex;flex-direction:column;gap:2px}
-    .pill-micro{font-size:9px;padding:1px 5px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-micro.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-micro.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-micro.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .pill-micro.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill-micro.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .note-micro-alt{font-size:10px;color:#9ca3af;margin-top:2px}
-    .info-mini{font-size:10px;color:#6b7280;margin-top:2px}
-    .card-outline{border-radius:12px;border:1px dashed #e5e7eb;background:#f9fafb;padding:8px 10px;margin-top:8px}
-    .card-outline p{margin:0;font-size:12px;color:#374151}
-    .card-outline strong{color:#111827}
-    .pill-outline-soft{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #d1d5db;background:#fff;color:#4b5563}
-    .pill-outline-soft.good{border-color:#16a34a;color:#166534}
-    .pill-outline-soft.bad{border-color:#b91c1c;color:#7f1d1d}
-    .pill-outline-soft.mixed{border-color:#0f766e;color:#115e59}
-    .pill-outline-soft.info{border-color:#0ea5e9;color:#0369a1}
-    .pill-outline-soft.neutral{border-color:#d1d5db;color:#374151}
-    .note-outline{font-size:11px;color:#6b7280;margin-top:2px}
-    .badge-inline{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .badge-inline.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .badge-inline.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .badge-inline.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .badge-inline.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .badge-inline.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .mini-help-inline{font-size:10px;color:#9ca3af;margin-left:4px}
-    .note-inline-alt{font-size:10px;color:#9ca3af;margin-top:2px}
-    .card-borderless{border-radius:12px;border:1px solid #e5e7eb;background:#ffffff;padding:8px 10px;margin-top:8px}
-    .card-borderless p{margin:0;font-size:12px;color:#374151}
-    .card-borderless strong{color:#111827}
-    .divider-soft{border-top:1px dashed #e5e7eb;margin:8px 0}
-    .micro-text{font-size:10px;color:#9ca3af;margin-top:2px}
-    .mini-label-alt{font-size:11px;color:#6b7280}
-    .stack-mini{display:flex;flex-direction:column;gap:2px}
-    .card-note{font-size:11px;color:#6b7280;margin-top:4px}
-    .hint-inline{font-size:11px;color:#6b7280;margin-left:6px}
-    .pill-tiny-alt{font-size:9px;padding:1px 5px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .badge-micro{font-size:9px;padding:1px 5px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .badge-micro.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .badge-micro.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .badge-micro.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .badge-micro.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .badge-micro.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .note-micro-inline{font-size:10px;color:#9ca3af;margin-left:4px}
-    .hint-micro-inline{font-size:10px;color:#9ca3af;margin-top:2px}
-    .card-aux{border-radius:12px;border:1px dashed #e5e7eb;background:#f9fafb;padding:8px 10px;margin-top:8px}
-    .card-aux p{margin:0;font-size:12px;color:#374151}
-    .card-aux strong{color:#111827}
-    .badge-aux{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .badge-aux.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .badge-aux.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .badge-aux.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .badge-aux.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .badge-aux.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .note-aux{font-size:11px;color:#6b7280;margin-top:2px}
-    .bp-mini-hint{font-size:10px;color:#9ca3af;margin-top:2px}
-    .stack-aux{display:flex;flex-direction:column;gap:3px}
-    .pill-aux{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .pill-aux.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .pill-aux.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .pill-aux.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .pill-aux.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .pill-aux.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .pill-aux-key{font-weight:500}
-    .note-aux-inline{font-size:10px;color:#9ca3af;margin-left:4px}
-    .hint-aux{font-size:11px;color:#6b7280;margin-top:2px}
-    .aux-caption{font-size:11px;color:#6b7280;margin-top:4px}
-    .mini-hint-alt{font-size:10px;color:#9ca3af;margin-top:2px}
-    .inline-aux{font-size:11px;color:#6b7280;margin-left:6px}
-    .aux-divider{border-top:1px dashed #e5e7eb;margin:8px 0}
-    .bp-tag{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .bp-tag.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .bp-tag.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .bp-tag.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .bp-tag.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .bp-tag.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .bp-tag-key{font-weight:500}
-    .bp-note-inline{font-size:11px;color:#6b7280;margin-left:6px}
-    .bp-hairline{border-top:1px dashed #e5e7eb;margin:6px 0}
-    .mini-subhead{font-size:12px;color:#4b5563;margin-top:4px}
-    .micro-inline{font-size:10px;color:#9ca3af;margin-left:4px}
-    .aux-pill{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid #e5e7eb;background:#f9fafb;color:#4b5563}
-    .aux-pill.good{border-color:#16a34a;color:#166534;background:#dcfce7}
-    .aux-pill.bad{border-color:#b91c1c;color:#7f1d1d;background:#fee2e2}
-    .aux-pill.mixed{border-color:#0f766e;color:#115e59;background:#ccfbf1}
-    .aux-pill.info{border-color:#0ea5e9;color:#0369a1;background:#e0f2fe}
-    .aux-pill.neutral{border-color:#d1d5db;color:#374151;background:#f9fafb}
-    .aux-pill-key{font-weight:500}
-    .aux-note{font-size:11px;color:#6b7280;margin-top:2px}
-    .aux-note-inline{font-size:10px;color:#9ca3af;margin-left:4px}
-    .aux-hint{font-size:11px;color:#6b7280;margin-top:2px}
-    .aux-caption-inline{font-size:10px;color:#9ca3af;margin-left:4px}
-    .aux-legend{font-size:11px;color:#6b7280;margin-top:4px}
-    .aux-legend span{margin-right:8px}
-    .aux-legend .badge{margin-right:4px}
-    .card-mini-alt{border-radius:10px;border:1px solid #e5e7eb;background:#f9fafb;padding:6px 8px;margin-top:6px}
-    .card-mini-alt p{margin:0;font-size:11px;color:#374151}
-    .card-mini-alt strong{color:#111827}
-    .aux-footnote{font-size:10px;color:#9ca3af;margin-top:2px}
-    .subtle-border{border-radius:8px;border:1px dashed #e5e7eb;padding:6px 8px;margin-top:6px}
+    .checks label{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid #e5e7eb;border-radius:10px}
+    .muted{color:#667085;font-size:13px;margin:0 0 6px}
+    table{width:100%; border-collapse:collapse; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden}
+    th, td{padding:10px; border-bottom:1px solid #f1f5f9}
+    thead tr{background:#f9fafb}
+    th{ text-align:left; vertical-align:top; white-space:normal; word-wrap:break-word }
+    td.num{ text-align:right }
+    .status{font-size:12px;color:#475467;margin-top:8px}
+    .error{color:#b42318;background:#fef3f2;border:1px solid #fed7d7;padding:8px;border-radius:8px;margin-top:8px}
   </style>
 </head>
 <body>
@@ -470,25 +45,10 @@
     <h1>Brain Healthy Meal Generator</h1>
     <p class="subtitle">Choose ingredients, set goals, or type a custom request.</p>
 
-    <!-- Client ID + Biomarker Tracking -->
-    <section class="card">
-      <h2>Record &amp; Track Your Biomarkers</h2>
-      <div class="row">
-        <label for="client-id-input">Client ID</label>
-        <input id="client-id-input" type="email" placeholder="Your Email" />
-      </div>
-      <p>You can record and track your biomarkers which reflect your meal choices, and your potential risk of cognitive decline.</p>
-      <div class="btn-row">
-        <button type="button" onclick="window.open('https://script.google.com/macros/s/AKfycbzamJjceH6M_fKDYlw78mOPIdljbuaItXrIofizd2JBlvIyprHcr0ZG5pe1-_TedyPo/exec', '_blank')">
-          Click to record your biomarkers
-        </button>
-      </div>
-    </section>
-
     <!-- A) Custom Request -->
     <section class="card">
       <h2>Custom Request</h2>
-      <p>Example: “Make a dinner with salmon and legumes.” If you leave this empty, you can still generate recipes based on the selections and goals below. Leave the number blank to default to 3–5 recipes.</p>
+      <p>Example: “Make a dinner with salmon and legumes.” If you want a specific number of recipes, enter the number of recipes below. Leave the number blank to default to 3–5 recipes.</p>
       <textarea id="custom-input" rows="4" placeholder="Describe the meal(s) you want..."></textarea>
       <div class="row">
         <label for="num-recipes">Number of recipes (optional):</label>
@@ -524,9 +84,9 @@
             </div>
           </div>
 
-          <div class="accordion" id="goals-accordion" style="margin-top:12px">
+          <div class="accordion" id="goals-accordion">
             <div class="acc-header" role="button" tabindex="0" aria-expanded="false" onclick="toggleAccordion(this)">
-              <h4>Goals &amp; Emphasis</h4>
+              <h4>Nutrition Goals</h4>
               <span class="muted">Click to expand</span>
             </div>
             <div class="acc-content">
@@ -568,303 +128,262 @@
     // STATIC UI SOURCES
     // =========================
     const STARTER_INGREDIENTS = {
-      "Vegetables": ["GPT CHOOSES VEGETABLES","Arugula","Collard Greens","Bok Choy","Broccoli","Brussels Sprouts","Cabbage (Green)","Cabbage (Red)","Carrots","Cauliflower","Celery","Chard","Chicory Greens","Dandelion Greens","Endive","Fennel Bulb","Kale","Kohlrabi","Leeks","Lettuce (Butter)","Lettuce (Green Leaf)","Lettuce (Red Leaf)","Lettuce (Romaine)","Mixed Greens (Spring Mix)","Mustard Greens","Okra","Onions (Red)","Onions (Yellow)","Onions (Sweet)","Parsley","Radicchio","Radishes","Scallions","Spinach","Turnip Greens","Watercress","Zucchini","Bell Peppers (Red)","Bell Peppers (Yellow)","Bell Peppers (Green)","Beets","Butternut Squash","Acorn Squash","Spaghetti Squash","Pumpkin (Fresh or Puree)","Sweet Potatoes","Yams","Cherry Tomatoes","Grape Tomatoes","Heirloom Tomatoes","Roma Tomatoes","Plum Tomatoes","Tomatillos","Portobello Mushrooms","Cremini Mushrooms","Shiitake Mushrooms","Oyster Mushrooms","Enoki Mushrooms","White Button Mushrooms","Asparagus","Artichokes","Green Beans","Snow Peas","Sugar Snap Peas","Pea Shoots","Cucumber","Summer Squash","Yellow Squash","Daikon Radish","Jicama","Napa Cabbage","Sauerkraut (Raw, Unpasteurized)","Kimchi (Low-Sodium)","Fermented Pickles (No Sugar Added)","Seaweed (Nori)","Seaweed (Wakame)","Seaweed (Dulse)","Broccoli Rabe","Chinese Broccoli (Gai Lan)","Chayote Squash","Hearts of Palm","Jerusalem Artichoke (Sunchoke)","Rutabaga","Parsnips","Turnips","Taro Root","Cassava (Yuca, in moderation)","Lotus Root","Pumpkin Seeds (as vegetable topping)","Carrot Tops (Greens)","Beet Greens","Celery Root (Celeriac)","Spirulina (Culinary Use)"],
-      "Legumes": ["GPT CHOOSES LEGUMES","Chickpeas","Edamame","Green Lentils","Red Lentils","Brown Lentils","Black Lentils (Beluga)","Split Peas (Green)","Split Peas (Yellow)","Black Beans","Cannellini Beans","Great Northern Beans","Lima Beans","Fava Beans","Adzuki Beans","Black-Eyed Peas","Butter Beans","Cranberry Beans (Borlotti)","Navy Beans","Pinto Beans","Kidney Beans","Mung Beans","Soybeans (Cooked)","Tempeh (Fermented Soy)","Natto (Fermented Soy)","Peas (Green)","Peas (Snow)","Peanut (Legume, unsalted, dry-roasted)","Lupini Beans","French Lentils (Puy)"],
-      "Fruit": ["GPT CHOOSES FRUIT","Apples","Avocados","Blackberries","Blueberries","Raspberries","Strawberries","Cherries (Fresh, Sweet or Tart)","Grapes (Red or Black)","Kiwi","Oranges","Clementines","Tangerines","Mandarins","Grapefruit (if not on interacting meds)","Lemons","Limes","Pears","Plums","Peaches","Nectarines","Apricots","Pineapple (Fresh)","Mango","Papaya","Pomegranate Arils","Bananas (Slightly Green for Lower GI)","Cranberries (Fresh or Unsweetened)","Goji Berries (Unsweetened, Dried)","Figs (Fresh)","Dates (Medjool, in moderation)","Passion Fruit","Dragon Fruit (Pitaya)","Guava","Starfruit (if no kidney dysfunction)"],
-      "Fish": ["GPT CHOOSES FISH","Wild Salmon","Sardines (Water, No Added Salt)","Mackerel (Atlantic or Pacific, Not King)","Herring","Anchovies","Arctic Char","Rainbow Trout","Cod","Haddock","Pollock","Halibut (In Moderation, For Variety)","Sablefish (Black Cod)","Albacore Tuna (Light, Low-Mercury Options; Limited Frequency)","Barramundi","Tilapia (Responsibly Farmed, Occasional)","Mussels","Clams","Oysters","Scallops","Shrimp (Sustainably Sourced, Occasional)","Lobster (Occasional, Mindful of Saturated Fat)","Crab"],
-      "Whole Grains": ["GPT CHOOSES WHOLE GRAINS","Steel-Cut Oats","Rolled Oats (Old Fashioned)","Oat Groats","Quinoa (White, Red, or Black)","Farro","Freekeh","Barley (Hulled)","Brown Rice (Short or Medium Grain)","Wild Rice","Black Rice (Forbidden Rice)","Red Rice","Buckwheat Groats (Kasha)","Amaranth","Millet","Sorghum","Teff","Bulgur Wheat","Rye Berries","Spelt Berries","Whole Wheat Berries","Einkorn Berries","100% Whole Grain Sprouted Bread (No Added Sugar, Minimal Additives)","Sourdough Bread (Whole Grain, Long-Ferment)","100% Whole Grain Pasta (Durum or Legume-Based)","Brown Rice Noodles (Minimal Additives)","Heirloom Corn (On the Cob)","Hominy (Minimal Processing)","Polenta (From Whole Grain Cornmeal, Cooled & Grilled/Baked)"],
-      "Nuts & Seeds": ["GPT CHOOSES NUTS & SEEDS","Almonds (Raw or Dry-Roasted, Unsalted)","Walnuts","Pecans","Pistachios","Cashews (In Moderation)","Macadamia Nuts (In Moderation)","Hazelnuts","Brazil Nuts (1–2 Per Day for Selenium)","Pine Nuts","Peanuts (Dry-Roasted, Unsalted)","Pumpkin Seeds (Pepitas, Unsalted)","Sunflower Seeds (Unsalted)","Chia Seeds","Flaxseeds (Ground)","Hemp Seeds","Sesame Seeds","Tahini (Sesame Seed Paste, Minimal Additives)","Nut & Seed Butters (No Added Sugar or Hydrogenated Oils)","Mixed Nuts (Unsalted, No Candy Additions)"],
-      "Meat & Poultry": ["GPT CHOOSES MEAT & POULTRY","Skinless Chicken Breast","Skinless Chicken Thighs (Baked/Grilled)","Turkey Breast","Ground Turkey (Lean, 93% or Higher)","Ground Chicken (Lean)","Pasture-Raised Poultry (When Accessible)","Grass-Fed Beef (Extra Lean Cuts, Limited Frequency)","Bison (Lean Cuts)","Pork Tenderloin (Trimmed, Occasional)","Lamb (Lean Cuts, Limited Frequency)","Turkey Meatballs (Oven-Baked, Lean)","Chicken Meatballs (Oven-Baked, Lean)","Extra-Lean Ground Beef (Occasional, For Iron Needs)","Game Meats (Venison, Elk - Lean, Limited)"],
-      "Pasta & Starchy Sides": ["GPT CHOOSES PASTA & STARCHES","100% Whole Wheat Pasta","Lentil Pasta","Chickpea Pasta","Black Bean Pasta","Brown Rice Pasta","Soba Noodles (100% Buckwheat)","Spaghetti Squash (As Pasta Replacement)","Zucchini Noodles (Zoodles)","Barley Pilaf","Farro Pilaf","Quinoa Pilaf","Wild Rice Pilaf","Sweet Potato Mash (Olive Oil Base)","Roasted Root Vegetables (Carrots, Parsnips, Beets)","Cauliflower Mash (Olive Oil & Garlic)"],
-      "Dairy & Alternatives": ["GPT CHOOSES DAIRY & ALTERNATIVES","Plain Greek Yogurt (2% or Skim, No Added Sugar)","Plain Skyr (Icelandic Yogurt)","Kefir (Plain, Unsweetened)","Cottage Cheese (Low-Fat, Low-Sodium)","Ricotta (Part-Skim, In Moderation)","Feta (Sheep or Goat, Small Amounts)","Goat Cheese (In Moderation)","Parmesan (Shaved or Grated, Small Amounts)","Part-Skim Mozzarella","Unsweetened Almond Milk (Calcium-Fortified)","Unsweetened Soy Milk (Calcium & B12-Fortified)","Unsweetened Hemp Milk","Unsweetened Oat Milk (Low-Additive Brands)","Plain Yogurt (Whole or 2%, Small Portions)"],
-      "Oils & Fats": ["GPT CHOOSES OILS & FATS","Extra-Virgin Olive Oil (Primary Cooking & Dressing Fat)","Avocado Oil (High-Heat Cooking)","Olives (Green or Black, Low-Sodium, Rinsed)","Avocado (Fresh or Mashed)","Canola Oil (High-Oleic, For Certain Dishes)","Ghee (Small Amounts, For Flavor)","Grass-Fed Butter (Very Limited, Occasional)","Walnut Oil (Cold, For Dressings)","Flaxseed Oil (Cold, For Dressings Only)"],
-      "Other": ["GPT CHOOSES OTHERS","Eggs (Whole, 1 Per Day Typical; Additional Whites If Needed)","Egg Whites","Hummus (Olive-Oil Based, No Seed Oils)","Salsa (Fresh, Low-Sodium)","Tomato Sauce (No Added Sugar, Low-Sodium)","Pesto (Olive Oil, Nuts, Basil)","Herbs (Fresh or Dried: Basil, Oregano, Rosemary, Thyme, Dill, Cilantro, Parsley, Mint)","Spices (Turmeric, Ginger, Cinnamon, Cumin, Coriander, Smoked Paprika, Black Pepper)","Garlic","Ginger Root (Fresh)","Lemon Juice","Lime Juice","Vinegars (Balsamic, Apple Cider, Red Wine, Rice – No Added Sugar)","Mustard (No Added Sugar)","Nutritional Yeast (B12-Fortified)","Low-Sodium Broth (Vegetable, Chicken, or Bone Broth)","Unsweetened Tea (Green, Black, Herbal)","Coffee (Filtered, In Moderation)","Dark Chocolate (70–85% Cacao, Small Squares)","Cocoa Powder (Unsweetened)","Plain Popcorn (Air-Popped, Light Olive Oil)"]
+      "Vegetables": ["GPT CHOOSES VEGETABLES","Arugula","Collard Greens","Kale","Mustard Greens","Romaine","Spinach","Swiss Chard","Broccoli","Brussel Sprouts","Cabbage","Cauliflower","Bell Peppers","Chili Peppers","Eggplant","Tomatoes","Beets","Carrots","Sweet Potatoes","Artichokes","Asparagus","Celery","Cucumber","Onions","Squash","Zucchini","Mushrooms","Cornmeal (whole grain)","Blue Corn","Sweet Corn","Grits (whole grain, cooked)","Heirloom Corn","Hominy Corn","Purple Corn","Polenta (cooked)"],
+      "Legumes": ["GPT CHOOSES LEGUMES","Chickpeas","Edamame","Green Peas","Lentils","Lupins","Miso","Natto","Peanuts","Soybeans","Split Peas","Tempeh","Tofu","Adzuki Beans","Black Beans","Kidney Beans","Mung Beans","Navy Beans","Pinto beans"],
+      "Fruit": ["GPT CHOOSES FRUIT","Apples","Avocados","Blackberries","Blueberries","Cranberries","Golgi Berries","Gooseberries","Grapes","Kiwis","Mulberries","Olives","Passion Fruit","Raspberries","Strawberries","Orange","Grapefruit","Lemon","Cherries","Watermelon","Black currants (Dried)","Bilberries (Dried)","Cranberries (Dried)","Prunes","Dates","Figs","Raisins","Gooseberries (Dried)","Mulberries (Dried)"],
+      "Fish": ["GPT CHOOSES FISH","Anchovies","Herring","Mackerel","Salmon","Sardines","Flounder","Sea Bass","Sturgeon","Trout","Yellow Catfish"],
+      "Whole Grains": ["GPT CHOOSES WHOLE GRAINS","Amaranth","Barley","Brown Rice","Farro","Millet","Oats/Oat Groats/Steel Cut/Rolled","Quinoa","Whole Grain (Bread)","Whole Wheat"],
+      "Nuts/Seeds": ["GPT CHOOSES NUTS OR SEEDS","Almonds","Brazil Nuts","Cashews","Hazelnuts","Macadamia Nuts","Pecans","Pistachios","Walnuts","Chia Seeds","Flaxseeds","Pumpkin Seeds","Sesame Seeds","Sunflower Seeds"],
+      "Meat": ["GPT CHOOSES THE MEAT","Chicken Breast","Turkey","Lamb","Pork Liver"],
+      "Pasta": ["GPT CHOOSES PASTA","Beet Pasta","Brown Rice Pasta","Buckwheat (Soba) Noodles","Chickpea Pasta","Lentil Pasta","Quinoa Pasta","Semolina Pasta","Sourdough Pasta","Spelt Pasta","Spinach Pasta","Whole Grain Pasta (non-wheat options)","Whole Wheat Pasta"],
+      "Dairy": ["GPT CHOOSES DAIRY","Asiago Cheese","Brie Cheese","Blue Cheese","Camembert Cheese","Cheddar Cheese","Edam Cheese","Gouda Cheese","Gruyère Cheese","Parmesan Cheese","Provolone Cheese","Romano Cheese","Swiss Cheese","Cottage Cheese","Feta Cheese","Limburger Cheese","Mozzarella Cheese (if fermented)","Tilsit Cheese","Yogurt (Fermented)","Low-fat Milk","Kefir"],
+      "Oils": ["GPT CHOOSES THE OIL","Avocado Oil","Olive Oil","Cod Liver Oil","Krill Oil"],
+      "Fermented Foods": ["Apple Cider Vinegar","Balsamic Vinegar","Kefir","Kimchi","Kombucha (Unsweetened)","Sauerkraut","Yogurt (Fermented)"],
+      "Other Ingredients": ["GPT CHOOES OTHER (EGGS, COFFEE, TEA, HONEY, OTHERS)","Cacao","Capers","Coffee","Eggs","Green Tea","Honey","Kombucha (Unsweetened)","Seaweed","Soy Milk"]
     };
-
+    const EXCLUDE_CATEGORIES = Object.keys(STARTER_INGREDIENTS);
     const GOALS = [
-      "Support metabolic health & insulin sensitivity",
-      "Lower inflammation & support brain resilience",
-      "Support gut health & microbiome diversity",
-      "Support blood pressure & vascular health",
-      "Weight management (gentle, sustainable)",
-      "Plant-forward / flexitarian emphasis",
-      "High-protein, muscle-supportive pattern",
-      "Support sleep & circadian stability",
-      "Support cognitive performance & focus"
-    ];
-
-    const EXCLUDE_CATEGORIES = [
-      "Red meat–heavy meals",
-      "High-sugar desserts",
-      "Refined flour–heavy meals",
-      "Fried or ultra-processed patterns",
-      "High-sodium patterns",
-      "Full-fat dairy–heavy meals"
+      "General Cognitive Health",
+      "Weight Loss / Metabolic Health",
+      "Blood Sugar Control (Low GI/GL)",
+      "Cardiovascular Support (Low Sodium / Healthy Fats)",
+      "Sleep Support",
+      "Anti-inflammatory Focus (Lower DII)",
+      "Microbiome Support (Pre/Pro/Post-biotic)"
     ];
 
     // =========================
-    // HELPER FUNCTIONS
+    // HELPERS
     // =========================
-    function createCheckboxPill(id, label, groupName) {
-      const wrapper = document.createElement('label');
-      wrapper.className = 'check-pill';
-
-      const input = document.createElement('input');
-      input.type = 'checkbox';
-      input.value = label;
-      input.name = groupName;
-      input.id = id;
-
-      const span = document.createElement('span');
-      span.textContent = label;
-
-      wrapper.appendChild(input);
-      wrapper.appendChild(span);
-
-      return wrapper;
-    }
-
-    function createIngredientSection(category, items) {
-      const fragment = document.createDocumentFragment();
-
-      const heading = document.createElement('h4');
-      heading.textContent = category;
-      fragment.appendChild(heading);
-
-      const checks = document.createElement('div');
-      checks.className = 'checks';
-
-      items.forEach((item, index) => {
-        const id = `${category.replace(/\s+/g, '-').toLowerCase()}-${index}`;
-        const pill = createCheckboxPill(id, item, `include-${category}`);
-        checks.appendChild(pill);
+    function el(tag, attrs={}, ...children){
+      const node = document.createElement(tag);
+      Object.entries(attrs).forEach(([k,v])=>{
+        if(k==='class') node.className = v;
+        else if(k==='for') node.setAttribute('for', v);
+        else if(k==='html') node.innerHTML = v;
+        else node.setAttribute(k,v);
       });
-
-      fragment.appendChild(checks);
-      return fragment;
+      children.forEach(c => node.append(c));
+      return node;
     }
+    function slugify(s){ return String(s||'').toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9\-]/g,''); }
+    function toggleAccordion(header){
+      const acc = header.parentElement;
+      const content = acc.querySelector('.acc-content');
+      const open = content.classList.toggle('open');
+      header.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function setStatus(msg){ const s=document.getElementById('status'); if(s) s.textContent = msg; }
 
-    // ================
-    // BUILD THE FORMS
-    // ================
-    function buildIncludeUI() {
+    // Checkbox renderer
+    function renderIncludeAccordions(){
       const root = document.getElementById('include-root');
-      if (!root) return;
-
-      Object.entries(STARTER_INGREDIENTS).forEach(([category, items]) => {
-        const section = createIngredientSection(category, items);
-        root.appendChild(section);
+      root.innerHTML = '';
+      Object.entries(STARTER_INGREDIENTS).forEach(([cat, items])=>{
+        const catSlug = slugify(cat);
+        const acc = el('div', { class:'accordion' });
+        const header = el('div', { class:'acc-header', role:'button', tabindex:'0', 'aria-expanded':'false', onclick:'toggleAccordion(this)' },
+          el('h4', {}, cat),
+          el('span', { class:'muted' }, 'Click to expand')
+        );
+        const content = el('div', { class:'acc-content' });
+        const list = el('div', { class:'checks' });
+        items.forEach(val=>{
+          const id = `inc-${catSlug}-${slugify(val)}`;
+          const input = el('input', { type:'checkbox', id, value:val, 'data-cat':catSlug });
+          const label = el('label', { for:id }, input, val);
+          list.appendChild(label);
+        });
+        content.appendChild(list);
+        acc.appendChild(header); acc.appendChild(content);
+        root.appendChild(acc);
       });
     }
 
-    function buildExcludeUI() {
-      const root = document.getElementById('exc-categories');
-      if (!root) return;
-
-      EXCLUDE_CATEGORIES.forEach((label, index) => {
-        const id = `exclude-${index}`;
-        const pill = createCheckboxPill(id, label, 'exclude-category');
-        root.appendChild(pill);
+    function renderChecks(containerId, items){
+      const root = document.getElementById(containerId); root.innerHTML = '';
+      items.forEach(v=>{
+        const id = `${containerId}-${slugify(v)}`;
+        const input = el('input', { type:'checkbox', id, value:v });
+        const label = el('label', { for:id }, input, v);
+        root.appendChild(label);
       });
     }
 
-    function buildGoalsUI() {
-      const root = document.getElementById('goals');
-      if (!root) return;
-
-      GOALS.forEach((goal, index) => {
-        const id = `goal-${index}`;
-        const pill = createCheckboxPill(id, goal, 'goal-tag');
-        root.appendChild(pill);
+    function getSelectedByCat(){
+      const inputs = document.querySelectorAll('input[type=checkbox][data-cat]');
+      const out = {};
+      inputs.forEach(i=>{
+        const cat = i.getAttribute('data-cat');
+        if (i.checked){ (out[cat] ||= []).push(i.value); }
       });
+      return out;
+    }
+    function getSelected(containerId){
+      const root = document.getElementById(containerId);
+      const inputs = root ? root.querySelectorAll('input[type=checkbox]:checked') : [];
+      return Array.from(inputs).map(i=>i.value);
     }
 
-    // ================
-    // ACCORDIONS
-    // ================
-    function toggleAccordion(headerEl) {
-      const accordion = headerEl.closest('.accordion');
-      const expanded = accordion.classList.toggle('open');
-
-      const btnHeader = accordion.querySelector('.acc-header');
-      if (btnHeader) {
-        btnHeader.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-      }
-    }
-
-    // ============
-    // PREVIEW TEXT
-    // ============
-    function getCheckedValuesByName(name) {
-      return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(i => i.value);
-    }
-
-    function collectFormState() {
-      const includeSelections = {};
-      Object.keys(STARTER_INGREDIENTS).forEach(cat => {
-        const name = `include-${cat}`;
-        includeSelections[cat] = getCheckedValuesByName(name);
+    function collectForm(){
+      const selections = {};
+      Object.keys(STARTER_INGREDIENTS).forEach(cat=>{
+        const slug = slugify(cat);
+        selections[cat] = getSelectedByCat()[slug] || [];
       });
-
-      const excludeSelections = getCheckedValuesByName('exclude-category');
-      const goalSelections = getCheckedValuesByName('goal-tag');
-
-      return { includeSelections, excludeSelections, goalSelections };
+      const exclusions = getSelected('exc-categories');
+      const goals = getSelected('goals');
+      return { selections, exclusions, goals };
     }
-
-    function buildPreviewText({ includeSelections, excludeSelections, goalSelections }) {
-      const includedSummary = Object.entries(includeSelections)
-        .map(([cat, items]) => items.length ? `${cat}: ${items.join(', ')}` : '')
-        .filter(Boolean)
-        .join('; ');
-
+    function buildPreviewText(data){
       const parts = [];
-
-      if (includedSummary) {
-        parts.push(`Include these ingredients and categories: ${includedSummary}.`);
-      } else {
-        parts.push('No specific ingredients selected yet.');
+      for (const [cat, list] of Object.entries(data.selections)) {
+        if (list && list.length) parts.push(`${cat}: ${list.join(', ')}`);
       }
-
-      if (excludeSelections.length) {
-        parts.push(`Avoid these patterns or categories: ${excludeSelections.join(', ')}.`);
-      }
-
-      if (goalSelections.length) {
-        parts.push(`Emphasize these goals: ${goalSelections.join('; ')}.`);
-      }
-
-      if (!excludeSelections.length && !goalSelections.length) {
-        parts.push('You can also choose goals or exclusions to better tailor coaching and brain health support.');
-      }
-
-      return parts.join(' ');
+      if (data.exclusions?.length) parts.push(`Exclude categories: ${data.exclusions.join(', ')}`);
+      if (data.goals?.length) parts.push(`Goals: ${data.goals.join(', ')}`);
+      return parts.length ? parts.join('\n') : 'No selections yet.';
     }
 
-    function updatePreview() {
-      const form = collectFormState();
-      const previewEl = document.getElementById('form-preview');
-      if (!previewEl) return;
-      previewEl.textContent = buildPreviewText(form);
+    // =========================
+    // OPENAI VIA NETLIFY FUNCTION
+    // =========================
+    async function callOpenAI(messages){
+      const resp = await fetch(CFG.generateEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages, temperature: 0.4, max_tokens: 1200, model: 'gpt-4o-mini' })
+      });
+      const data = await resp.json();
+      if (!resp.ok) throw new Error(data?.error || ('HTTP '+resp.status));
+      return data?.content || '';
     }
 
-    // =====================
-    // RECIPE GENERATION API
-    // =====================
-    async function callGenerateAPI(payload) {
-      const statusEl = document.getElementById('status');
-      if (statusEl) {
-        statusEl.textContent = 'Contacting the BrainPreserve engine...';
+    function getSelectedIngredients(form){
+      const picked = [];
+      for (const [cat, list] of Object.entries(form.selections)){
+        (list||[]).forEach(name=>{
+          if (!/^GPT CHOOSES/i.test(name)) picked.push(name);
+        });
       }
+      return picked;
+    }
+
+    function coachingFromGoals(goals){
+      const tips = [];
+      if (goals.includes("Blood Sugar Control (Low GI/GL)")) tips.push("Favor legumes, intact whole grains, berries; pair carbs with protein/fiber; target GL < 10 per dish.");
+      if (goals.includes("Anti-inflammatory Focus (Lower DII)")) tips.push("Emphasize polyphenol-rich produce, EVOO, nuts, fermented foods; minimize UPFs/processed meats.");
+      if (goals.includes("Cardiovascular Support (Low Sodium / Healthy Fats)")) tips.push("Aim for ≤ 500–600 mg sodium/meal; choose omega-3 fish and EVOO; avoid deep-fried items.");
+      if (goals.includes("Microbiome Support (Pre/Pro/Post-biotic)")) tips.push("Include fermented foods and prebiotic fibers (onion, garlic, legumes, oats).");
+      if (goals.includes("Weight Loss / Metabolic Health")) tips.push("Center plates on vegetables + lean protein; keep energy density low; prioritize fiber and protein.");
+      if (goals.includes("Sleep Support")) tips.push("Consider magnesium-rich greens, kiwi, tart cherry; avoid late heavy meals and stimulants.");
+      return tips;
+    }
+
+    // =========================
+    // PUBLIC HANDLERS
+    // =========================
+    async function generateFromCustom(){
+      setStatus('');
+      const out = document.getElementById('custom-output');
+      const custom = document.getElementById('custom-input').value.trim();
+      const num = parseInt(document.getElementById('num-recipes').value, 10);
+      const count = Number.isFinite(num) ? num : undefined;
+
+      const sys = `You are BrainPreserve’s recipe engine. Generate brain-healthy recipes with clear headings, MIND/Mediterranean alignment, minimized added sugars and ultra-processed foods, reasonable sodium, and a short coaching suggestions section tailored to the request.`;
+      const user = `${count ? `Generate ${count} recipes.` : 'Generate 3–5 recipes.'}
+Request: ${custom || 'Chef’s choice within brain-healthy constraints.'}`;
+
+      out.textContent = 'Generating...';
+      try{
+        const text = await callOpenAI([{ role:'system', content: sys }, { role:'user', content: user }]);
+        out.textContent = text || '(no text)';
+
+        // === AUTO RENDER 4 TABLES (derive ingredients from the returned recipe text; fall back to the user input) ===
+        if (window.BP && typeof window.BP.renderTables === 'function') {
+          let ingredients = [];
+          if (typeof window.BP.deriveIngredientsFromRecipe === 'function') {
+            ingredients = window.BP.deriveIngredientsFromRecipe(text);
+            if (!ingredients.length) ingredients = window.BP.deriveIngredientsFromRecipe(custom);
+          }
+          window.BP.renderTables(ingredients);
+        }
+      }catch(err){
+        out.textContent = 'Error: ' + err.message;
+      }
+    }
+
+    function clearCustomSection(){
+      document.getElementById('custom-input').value = '';
+      document.getElementById('num-recipes').value = '';
+      document.getElementById('custom-output').textContent = '';
+    }
+
+    async function generateFromSelections(){
+      setStatus('Working…');
+
+      const form = collectForm();
+      document.getElementById('form-preview').textContent = buildPreviewText(form);
+
+      const out = document.getElementById('form-output') || document.createElement('pre');
+      if (!out.id){ out.id='form-output'; out.className='card'; document.querySelector('main').appendChild(out); }
+      out.textContent = 'Generating...';
 
       try {
-        const response = await fetch(CFG.generateEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
+        const selLines = Object.entries(form.selections)
+          .filter(([, list]) => list && list.length)
+          .map(([k, list]) => `${k}: ${list.join(', ')}`)
+          .join('\n');
+        const exc = form.exclusions?.length ? `Exclude categories: ${form.exclusions.join(', ')}` : '';
+        const goals = form.goals?.length ? `Goals: ${form.goals.join(', ')}` : '';
 
-        if (!response.ok) {
-          throw new Error(`Server error: ${response.status}`);
+        const sys = `You are BrainPreserve’s recipe engine. Use the provided selections, respect exclusions strictly, and tailor to the listed goals. Return 3–5 recipes with clear headings and a brief goal-aligned coaching section (e.g., lower GI/GL for blood sugar, anti-inflammatory emphasis, microbiome-supportive ferments and fibers).`;
+        const user = `Selections:
+${selLines || '(none)'}
+${exc}
+${goals}`;
+
+        // 1) Recipe text
+        const text = await callOpenAI([{ role:'system', content: sys }, { role:'user', content: user }]);
+        out.textContent = text || '(no text)';
+
+        // 2) AUTO RENDER 4 TABLES from selected ingredients
+        if (window.BP && typeof window.BP.renderTables === 'function') {
+          const picked = getSelectedIngredients(form);
+          window.BP.renderTables(picked);
         }
 
-        const data = await response.json();
-        if (!data || !data.recipes || !Array.isArray(data.recipes)) {
-          throw new Error('Unexpected response format from server.');
-        }
-
-        if (statusEl) {
-          statusEl.textContent = '';
-        }
-
-        const customOutput = document.getElementById('custom-output');
-        const previewOutput = document.getElementById('form-preview');
-
-        if (payload.mode === 'custom' && customOutput) {
-          customOutput.textContent = data.recipes.join('\n\n---\n\n');
-        } else if (previewOutput) {
-          previewOutput.textContent = data.recipes.join('\n\n---\n\n');
-        }
-
-        if (data.tablesHtml) {
-          const tablesContainer = document.getElementById('bp-nutrition');
-          if (tablesContainer) {
-            tablesContainer.innerHTML = data.tablesHtml;
-          }
-        }
-      } catch (err) {
-        if (statusEl) {
-          statusEl.textContent = `Error: ${err.message}`;
-        }
+        setStatus('Done.');
+      } catch(err){
+        out.textContent = '';
+        const errBox = el('div',{class:'error'}, 'Error during generation: ', String(err?.message || err));
+        out.replaceWith(errBox);
+        errBox.id='form-output';
+        console.error(err);
+        setStatus('Error.');
       }
     }
 
-    // =====================
-    // BUTTON HANDLERS
-    // =====================
-    function generateFromCustom() {
-      const input = document.getElementById('custom-input');
-      const numRecipesInput = document.getElementById('num-recipes');
-      const text = (input && input.value || '').trim();
-
-      const numRequested = numRecipesInput && numRecipesInput.value
-        ? parseInt(numRecipesInput.value, 10)
-        : undefined;
-
-      const payload = {
-        mode: 'custom',
-        customText: text || null,
-        numRecipes: Number.isFinite(numRequested) ? numRequested : null
-      };
-
-      callGenerateAPI(payload);
+    function clearFormSelections(){
+      document.querySelectorAll('.checks input[type=checkbox]').forEach(i => { i.checked = false; });
+      document.getElementById('form-preview').textContent = 'No selections yet.';
+      const out = document.getElementById('form-output'); if (out) out.textContent = '';
+      const bp = document.getElementById('bp-nutrition'); if (bp) bp.innerHTML = '';
+      setStatus('');
     }
 
-    function generateFromSelections() {
-      const { includeSelections, excludeSelections, goalSelections } = collectFormState();
+    // =========================
+    // INIT UI
+    // =========================
+    (function init(){
+      renderIncludeAccordions();
+      renderChecks('exc-categories', EXCLUDE_CATEGORIES);
+      renderChecks('goals', GOALS);
 
-      const payload = {
-        mode: 'selections',
-        includeSelections,
-        excludeSelections,
-        goalSelections
-      };
-
-      callGenerateAPI(payload);
-    }
-
-    function clearCustomSection() {
-      const input = document.getElementById('custom-input');
-      const numRecipes = document.getElementById('num-recipes');
-      const output = document.getElementById('custom-output');
-
-      if (input) input.value = '';
-      if (numRecipes) numRecipes.value = '';
-      if (output) output.textContent = '';
-    }
-
-    function clearFormSelections() {
-      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-        cb.checked = false;
-      });
-      updatePreview();
-    }
-
-    // =====================
-    // INITIALIZE ON LOAD
-    // =====================
-    document.addEventListener('DOMContentLoaded', () => {
-      buildIncludeUI();
-      buildExcludeUI();
-      buildGoalsUI();
-
-      ['include-root', 'exc-categories', 'goals'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.addEventListener('change', () => {
-            const form = collectFormState();
-            document.getElementById('form-preview').textContent = buildPreviewText(form);
-          });
+      document.body.addEventListener('change', (e)=>{
+        if(e.target.closest('.checks')){
+          const form = collectForm();
+          document.getElementById('form-preview').textContent = buildPreviewText(form);
         }
       });
     })();
